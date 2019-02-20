@@ -18,7 +18,7 @@ LOW_COLOR = '#eeeeee'
 
 LAT_BOUNDS = (25, 50)
 LONG_BOUNDS = (-130, -60)
-IMG_SIZE = 40
+IMG_SIZE = 100
 IMG_RATIO = (LAT_BOUNDS[0] - LAT_BOUNDS[1]) / (LONG_BOUNDS[0] - LONG_BOUNDS[1])
 IMG_DIMENSIONS = (IMG_SIZE, IMG_SIZE * IMG_RATIO)
 
@@ -26,8 +26,8 @@ if __name__ == '__main__':
 
     start = time()
 
-    # with open(SCORE_FILE) as file:
-    #     scores = json.load(file)
+    with open(SCORE_FILE) as file:
+        scores = json.load(file)
 
     shapefile = shp.Reader(SHAPE_FILE)
     shapes = shapefile.shapes()
@@ -40,14 +40,18 @@ if __name__ == '__main__':
         polygon = shapes[i].__geo_interface__
         county = records[i][COUNTY_KEY]
         
-        # score = scores[county]
-        color = gradient[0].hex_l
+        if county not in scores:
+            continue
+
+        score = scores[county]
+        color = gradient[score].hex_l
 
         patch = PolygonPatch(polygon, fc=color, ec='none', alpha=1, zorder=2)
         axes.add_patch(patch)
 
     plt.xlim(LONG_BOUNDS)
     plt.ylim(LAT_BOUNDS)
+    plt.axis('off')
     plt.savefig(PNG_FILE)
     Image.open(PNG_FILE).convert('RGB').save(JPG_FILE, 'JPEG')
 

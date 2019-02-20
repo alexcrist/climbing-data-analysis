@@ -38,7 +38,7 @@ if __name__ == '__main__':
         rows = file.readlines()
 
     for row in rows[1:]:
-        values = row.split()
+        values = row.split('\t')
         county = values[2]
         lat = values[8]
         long = values[9]
