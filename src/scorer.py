@@ -1,9 +1,9 @@
-import csv
 import json
+import codecs
 
-CLIMBING_AREAS_FILE = './data/climbing-areas.json'
-ZIPCODE_FILE = './data/zipcode-lat-long.txt'
-SCORES_FILE = './data/scores.json'
+CLIMBING_AREAS_FILE = './data/climbing-areas-2019.json'
+COUNTIES_FILE = './data/usa-counties-lat-long-2017.txt'
+SCORES_FILE = './data/county-scores-raw.json'
 
 def calculate_score(lat, long, node, node_lat, node_long):
     node_is_list = isinstance(node, list)
@@ -34,12 +34,16 @@ if __name__ == '__main__':
         data = json.load(file)
 
     scores = {}
-    with open(ZIPCODE_FILE) as file:
-        reader = csv.reader(file)
-        for [zipcode, lat, long] in reader:
-            score = calculate_score(float(lat), float(long), data, 0, 0)
-            scores[zipcode] = score
-            print('.', end='', flush=True)
+    with codecs.open(COUNTIES_FILE, 'r', encoding='utf-8', errors='ignore') as file:
+        rows = file.readlines()
+
+    for row in rows[1:]:
+        values = row.split()
+        county = values[2]
+        lat = values[8]
+        long = values[9]
+        score = calculate_score(float(lat), float(long), data, 0, 0)
+        scores[county] = score
 
     with open(SCORES_FILE, 'w') as file:  
         json.dump(scores, file)
