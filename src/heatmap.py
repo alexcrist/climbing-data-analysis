@@ -7,7 +7,7 @@ from colour import Color
 from descartes import PolygonPatch
 
 SHAPE_FILE = './data/usa-counties-shapefiles-2017/cb_2017_us_county_500k'
-SCORE_FILE = './data/county-scores-normalized.json'
+SCORE_FILE = './data/county-scores.json'
 PNG_FILE = './heatmap.png'
 JPG_FILE = './heatmap.jpg'
 

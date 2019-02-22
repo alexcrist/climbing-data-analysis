@@ -1,49 +1,95 @@
 import json
 import codecs
+import numpy as np
+from math import exp
+from time import time
 
-CLIMBING_AREAS_FILE = './data/climbing-areas-2019.json'
+CLIMBING_AREAS_FILE = './data/flattened-climbing-routes-2019.json'
 COUNTIES_FILE = './data/usa-counties-lat-long-2017.txt'
-SCORES_FILE = './data/county-scores-raw.json'
+SCORES_FILE = './data/county-scores.json'
 
-def calculate_score(lat, long, node, node_lat, node_long):
-    node_is_list = isinstance(node, list)
-    node_is_area = 'children' in node
+NUM_CLIMBING_FIELDS = 4
+AVG_RATING = 0
+NUM_RATINGS = 1
+ROUTE_LAT = 2
+ROUTE_LONG = 3
 
-    if node_is_list:
-        score = 0
-        for sub_node in node:
-            score += calculate_score(lat, long, sub_node, node_lat, node_long)
-        return score
+def load_climbing_data():
+    climbing_data = []
+    raw_climbing_data = json.load(open(CLIMBING_AREAS_FILE))
 
-    elif node_is_area:
-        if 'lat' in node and 'long' in node:
-            node_lat = node['lat']
-            node_long = node['long']
-        return calculate_score(lat, long, node['children'], node_lat, node_long)
+    for row in raw_climbing_data:
+        entry = [0] * NUM_CLIMBING_FIELDS
+        entry[AVG_RATING] = row['avgRating']
+        entry[NUM_RATINGS] = row['numRatings']
+        entry[ROUTE_LAT] = row['lat']
+        entry[ROUTE_LONG] = row['long']
+        climbing_data.append(entry)
 
-    else:
-        distance = ((lat - node_lat)**2 + (long - node_long)**2)**0.5
-        avg_rating = node['avgRating']
-        num_ratings = node['numRatings']
-        score = (avg_rating**2 * num_ratings) / (2 * distance)
-        return score
+    return np.array(climbing_data)
+
+def load_county_data():
+    raw_county_data = codecs.open(COUNTIES_FILE, 'r', encoding='utf-8', errors='ignore')
+    raw_county_data = raw_county_data.readlines()[1:]
+    county_data = []
+
+    for row in raw_county_data:
+        values = row.split('\t')
+        county = {}
+        county['id'] = values[2]
+        county['lat'] = float(values[8])
+        county['long'] = float(values[9])
+        county_data.append(county)
+
+    return county_data
+
+def calculate_score(lat, long, climbing_data):
+    dLat = climbing_data[:,ROUTE_LAT] - lat 
+    dLong = climbing_data[:,ROUTE_LONG] - long
+
+    dLatSquared = np.multiply(dLat, dLat)
+    dLongSquared = np.multiply(dLong, dLong)
+
+    distance = np.sqrt(dLatSquared + dLongSquared)
+    distanceScore = np.exp(np.multiply(-1, distance))
+
+    ratingScore = np.multiply(climbing_data[:,AVG_RATING], climbing_data[:,NUM_RATINGS])
+    score = np.multiply(ratingScore, distanceScore)
+
+    return np.sum(score)
+
+def normalize_scores(scores):
+    max_score = 0
+    for county, score in scores.items():
+        max_score = max(score, max_score)
+
+    normalized_scores = {}
+    for county, score in scores.items():
+        normalized_score = int(round(score / max_score * 100))
+        normalized_scores[county] = normalized_score
+
+    return normalized_scores
 
 if __name__ == '__main__':
 
-    with open(CLIMBING_AREAS_FILE) as file:
-        data = json.load(file)
+    climbing_data = load_climbing_data()
+    county_data = load_county_data()
+
+    start = time()
 
     scores = {}
-    with codecs.open(COUNTIES_FILE, 'r', encoding='utf-8', errors='ignore') as file:
-        rows = file.readlines()
+    count = 0
+    for county in county_data:
+        count += 1
+        score = calculate_score(county['lat'], county['long'], climbing_data)
+        scores[county['id']] = score
+        if count == 30:
+            break
 
-    for row in rows[1:]:
-        values = row.split('\t')
-        county = values[2]
-        lat = values[8]
-        long = values[9]
-        score = calculate_score(float(lat), float(long), data, 0, 0)
-        scores[county] = score
+    normalized_scores = normalize_scores(scores)
 
     with open(SCORES_FILE, 'w') as file:  
-        json.dump(scores, file)
+        json.dump(normalized_scores, file)
+
+    duration = round(time() - start, 2)
+    print('Scored US counties to', SCORES_FILE, 'in', duration, 'seconds.')
