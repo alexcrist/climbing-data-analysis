@@ -13,14 +13,15 @@ JPG_FILE = './heatmap.jpg'
 
 COUNTY_KEY = 'COUNTYNS'
 
-HIGH_COLOR = '#000000'
-LOW_COLOR = '#eeeeee'
+HIGH_COLOR = '#FF0909'
+LOW_COLOR = '#4949E4'
+BACKGROUND_COLOR = '#EEEEEE'
 
-LAT_BOUNDS = (25, 50)
-LONG_BOUNDS = (-130, -60)
-IMG_SIZE = 100
-IMG_RATIO = (LAT_BOUNDS[0] - LAT_BOUNDS[1]) / (LONG_BOUNDS[0] - LONG_BOUNDS[1])
-IMG_DIMENSIONS = (IMG_SIZE, IMG_SIZE * IMG_RATIO)
+LAT_BOUNDS = (25, 50) 
+LONG_BOUNDS = (-126, -66)
+IMG_SIZE = 50
+IMG_RATIO = (LAT_BOUNDS[0] - LAT_BOUNDS[1]) / (LONG_BOUNDS[0] - LONG_BOUNDS[1]) / 0.77
+IMG_DIMENSIONS = (IMG_SIZE, IMG_RATIO * IMG_SIZE)
 
 if __name__ == '__main__':
 
@@ -35,6 +36,9 @@ if __name__ == '__main__':
 
     gradient = list(Color(LOW_COLOR).range_to(Color(HIGH_COLOR), 101))
     axes = plt.figure(figsize=IMG_DIMENSIONS).gca()
+    axes.set_facecolor(BACKGROUND_COLOR)
+    axes.xaxis.set_visible(False)
+    axes.yaxis.set_visible(False)
 
     for i in range(len(shapes)):
         polygon = shapes[i].__geo_interface__
@@ -51,8 +55,7 @@ if __name__ == '__main__':
 
     plt.xlim(LONG_BOUNDS)
     plt.ylim(LAT_BOUNDS)
-    plt.axis('off')
-    plt.savefig(PNG_FILE)
+    plt.savefig(PNG_FILE, bbox_inches='tight', transparent=True, pad_inches=0)
     Image.open(PNG_FILE).convert('RGB').save(JPG_FILE, 'JPEG')
 
     duration = round(time() - start, 2)
