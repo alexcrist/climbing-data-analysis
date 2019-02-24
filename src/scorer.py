@@ -1,5 +1,6 @@
 import json
 import codecs
+import operator
 import numpy as np
 from math import exp
 from time import time
@@ -56,35 +57,35 @@ def calculate_score(lat, long, climbing_data):
     ratingScore = np.multiply(climbing_data[:,AVG_RATING], climbing_data[:,NUM_RATINGS])
     score = np.multiply(ratingScore, distanceScore)
 
-    return np.sum(score)
+    return np.log(np.sum(score) + 1)
 
 def normalize_scores(scores):
+    min_score = 99999999
     max_score = 0
     for county, score in scores.items():
         max_score = max(score, max_score)
+        min_score = min(score, min_score)
 
     normalized_scores = {}
     for county, score in scores.items():
-        normalized_score = int(round(score / max_score * 100))
+        normalized_score = int(round((score - min_score) / (max_score - min_score) * 1000))
+
+        normalized_score = int(round(score / max_score * 1000))
         normalized_scores[county] = normalized_score
 
     return normalized_scores
 
 if __name__ == '__main__':
 
+    start = time()
+
     climbing_data = load_climbing_data()
     county_data = load_county_data()
 
-    start = time()
-
     scores = {}
-    count = 0
     for county in county_data:
-        count += 1
         score = calculate_score(county['lat'], county['long'], climbing_data)
         scores[county['id']] = score
-        if count == 30:
-            break
 
     normalized_scores = normalize_scores(scores)
 

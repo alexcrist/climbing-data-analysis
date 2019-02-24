@@ -34,7 +34,7 @@ if __name__ == '__main__':
     shapes = shapefile.shapes()
     records = shapefile.records()
 
-    gradient = list(Color(LOW_COLOR).range_to(Color(HIGH_COLOR), 101))
+    gradient = list(Color(LOW_COLOR).range_to(Color(HIGH_COLOR), 1001))
     axes = plt.figure(figsize=IMG_DIMENSIONS).gca()
     axes.set_facecolor(BACKGROUND_COLOR)
     axes.xaxis.set_visible(False)
@@ -60,3 +60,6 @@ if __name__ == '__main__':
 
     duration = round(time() - start, 2)
     print('Saved heatmap to', JPG_FILE, 'in', duration, 'seconds.')
+
+    Image.open(JPG_FILE).show()
+    
