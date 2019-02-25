@@ -76,7 +76,7 @@
 
 ## 🖩 How are these heatmaps created?
 
-For every zipcode in the United States, we calculate that zipcode's climbing score using the following formula.
+For each zipcode in the United States, we calculate that zipcode's climbing score using the following formula.
 
 <img src="./equation.png" width="450">
 
