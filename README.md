@@ -1,6 +1,6 @@
 # 🏞️ Climbing Data Analysis
 
-> An analysis of outdoor rock climbing data scraped from the Mountain Project
+> An analysis of outdoor rock climbing data
 
 ## 🌄 Where are the best places to live for rock climbing?
 
