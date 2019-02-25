@@ -1,4 +1,4 @@
-# Climbing Data Analysis
+# 🏞️ Climbing Data Analysis
 
 > An analysis of outdoor rock climbing data scraped from the Mountain Project
 
