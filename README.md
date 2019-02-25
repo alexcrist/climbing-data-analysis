@@ -1,6 +1,6 @@
 # Climbing Data Analysis
 
-## Where are the best places to live for rock climbing?
+## 🌄 Where are the best places to live for rock climbing?
 
 <details open>
   <summary><b>All Climbing Disciplines</b></summary>
@@ -72,7 +72,7 @@
 
 <br/>
 
-## How are these heatmaps created?
+## 🖩 How are these heatmaps created?
 
 For every zipcode in the United States, we calculate that zipcode's climbing score using the following formula.
 
@@ -82,7 +82,7 @@ After creating [a score for each zipcode](./data/geo-scores), we then create the
 
 Since [not every area in the US is covered by a zipcode](https://www.reddit.com/r/MapPorn/comments/938z9e/map_of_us_zip_code_regions/), we use US counties as a fallback which are less granular than zipcodes but cover all areas in the US.
 
-## Datasets
+## 🗂️ Datasets
 
 - [2017 US Census Zipcode Shapefiles](https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html)
 - [2017 US Census County Shapefiles](https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html)
