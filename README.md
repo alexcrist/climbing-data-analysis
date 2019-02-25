@@ -5,7 +5,7 @@
 ## 🌄 Where are the best places to live for rock climbing?
 
 <details open>
-  <summary><b>All Climbing Disciplines</b></summary>
+  <summary><b>All climbing disciplines</b></summary>
   <img src="./heatmaps/all.jpg">
 </details>
 
@@ -74,7 +74,7 @@
 
 <br/>
 
-## 🖩 How are these heatmaps created?
+## ⚗️ How are these heatmaps created?
 
 For each zipcode in the United States, we calculate that zipcode's climbing score using the following formula.
 
