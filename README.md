@@ -1,8 +1,7 @@
 # Climbing Area Data Analysis
 
-## Where is the best area to climb in the United States?
+## Best areas to climb in the US...
 
-...
 
 ## Datasets
 

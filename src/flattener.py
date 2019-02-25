@@ -1,7 +1,7 @@
 import json
 
-CLIMBING_AREAS_FILE = './data/climbing-areas-2019.json'
-FLATTENED_FILE = './data/flattened-climbing-routes-2019.json'
+CLIMBING_AREAS_FILE = './data/rock-climbing/climbing-areas-2019.json'
+FLATTENED_FILE = './data/rock-climbing/flattened-climbing-routes-2019.json'
 
 def flatten_data(node, node_lat, node_long):
     node_is_list = isinstance(node, list)
