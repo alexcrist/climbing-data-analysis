@@ -2,45 +2,55 @@
 
 ## Where are the best places to live for rock climbing?
 
-### All Climbing Disciplines
+<details open>
+  <summary><b>All Climbing Disciplines</b></summary>
+  <img src="./heatmaps/all.jpg">
+</details>
 
-![](./heatmaps/all.jpg)
+<details>
+  <summary><b>Sport</b></summary>
+  <img src="./heatmaps/sport.jpg">
+</details>
 
-### Sport
+<details>
+  <summary><b>Bouldering</b></summary>
+  <img src="./heatmaps/boulder.jpg">
+</details>
 
-![](./heatmaps/sport.jpg)
+<details>
+  <summary><b>Trad</b></summary>
+  <img src="./heatmaps/trad.jpg">
+</details>
 
-### Bouldering
+<details>
+  <summary><b>Toprope</b></summary>
+  <img src="./heatmaps/toprope.jpg">
+</details>
 
-![](./heatmaps/boulder.jpg)
+<details>
+  <summary><b>Aid</b></summary>
+  <img src="./heatmaps/aid.jpg">
+</details>
 
-### Trad
+<details>
+  <summary><b>Alpine</b></summary>
+  <img src="./heatmaps/alpine.jpg">
+</details>
 
-![](./heatmaps/trad.jpg)
+<details>
+  <summary><b>Snow</b></summary>
+  <img src="./heatmaps/snow.jpg">
+</details>
 
-### Toprope
+<details>
+  <summary><b>Ice</b></summary>
+  <img src="./heatmaps/ice.jpg">
+</details>
 
-![](./heatmaps/toprope.jpg)
-
-### Aid
-
-![](./heatmaps/aid.jpg)
-
-### Alpine
-
-![](./heatmaps/alpine.jpg)
-
-### Snow
-
-![](./heatmaps/snow.jpg)
-
-### Ice
-
-![](./heatmaps/ice.jpg)
-
-### Mixed
-
-![](./heatmaps/mixed.jpg)
+<details>
+  <summary><b>Mixed</b></summary>
+  <img src="./heatmaps/mixed.jpg">
+</details>
 
 ## How are these made?
 
