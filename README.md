@@ -1,4 +1,4 @@
-# Climbing Area Data Analysis
+# Climbing Data Analysis
 
 ## Where are the best places to live for rock climbing?
 
@@ -72,7 +72,7 @@
 
 <br/>
 
-## How are these made?
+## How are these heatmaps created?
 
 For every zipcode in the United States, we calculate that zipcode's climbing score using the following formula.
 
