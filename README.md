@@ -11,63 +11,63 @@
 
 <br/>
 
-<details>
+<details open>
   <summary><b>Sport</b></summary>
   <img src="./heatmaps/sport.jpg">
 </details>
 
 <br/>
 
-<details>
+<details open>
   <summary><b>Bouldering</b></summary>
   <img src="./heatmaps/boulder.jpg">
 </details>
 
 <br/>
 
-<details>
+<details open>
   <summary><b>Trad</b></summary>
   <img src="./heatmaps/trad.jpg">
 </details>
 
 <br/>
 
-<details>
+<details open>
   <summary><b>Toprope</b></summary>
   <img src="./heatmaps/toprope.jpg">
 </details>
 
 <br/>
 
-<details>
+<details open>
   <summary><b>Aid</b></summary>
   <img src="./heatmaps/aid.jpg">
 </details>
 
 <br/>
 
-<details>
+<details open>
   <summary><b>Alpine</b></summary>
   <img src="./heatmaps/alpine.jpg">
 </details>
 
 <br/>
 
-<details>
+<details open>
   <summary><b>Snow</b></summary>
   <img src="./heatmaps/snow.jpg">
 </details>
 
 <br/>
 
-<details>
+<details open>
   <summary><b>Ice</b></summary>
   <img src="./heatmaps/ice.jpg">
 </details>
 
 <br/>
 
-<details>
+<details open>
   <summary><b>Mixed</b></summary>
   <img src="./heatmaps/mixed.jpg">
 </details>
