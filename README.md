@@ -1,5 +1,7 @@
 # Climbing Data Analysis
 
+> An analysis of outdoor rock climbing data scraped from the Mountain Project
+
 ## 🌄 Where are the best places to live for rock climbing?
 
 <details open>
@@ -84,9 +86,9 @@ Since [not every area in the US is covered by a zipcode](https://www.reddit.com/
 
 ## 🗂️ Datasets
 
-- [2017 US Census Zipcode Shapefiles](https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html)
-- [2017 US Census County Shapefiles](https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html)
-- [2017 US Census State Shapefiles](https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html)
-- [2017 US Census Zipcode Latitude and Longitude](https://gist.github.com/erichurst/7882666)
-- [2017 US Census County Latitude and Longitude](https://www.census.gov/geo/maps-data/data/gazetteer2017.html)
-- [Rock Climbing Data](https://github.com/alexcrist/mountain-project-scraper)
+- [2017 US Census zipcode shapefiles](https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html)
+- [2017 US Census county shapefiles](https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html)
+- [2017 US Census state shapefiles](https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html)
+- [2017 US Census zipcode latitude and longitude](https://gist.github.com/erichurst/7882666)
+- [2017 US Census county latitude and longitude](https://www.census.gov/geo/maps-data/data/gazetteer2017.html)
+- [Rock climbing data](https://github.com/alexcrist/mountain-project-scraper)
