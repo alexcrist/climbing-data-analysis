@@ -5,74 +5,51 @@
 ## 🌄 Where are the best places to live for rock climbing?
 
 <details open>
-  <summary><b>All climbing disciplines</b></summary>
+  <summary><b>All climbing types</b></summary>
   <img src="./heatmaps/all.jpg">
+  <br/>
 </details>
 
-<br/>
+<details>
+  <summary>Individual climbing types</summary>
 
-<details open>
-  <summary><b>Sport</b></summary>
+  <b>Sport</b>
   <img src="./heatmaps/sport.jpg">
-</details>
+  <br/>
 
-<br/>
-
-<details open>
-  <summary><b>Bouldering</b></summary>
+  <b>Bouldering</b>
   <img src="./heatmaps/boulder.jpg">
-</details>
+  <br/>
 
-<br/>
-
-<details open>
-  <summary><b>Trad</b></summary>
+  <b>Trad</b>
   <img src="./heatmaps/trad.jpg">
-</details>
+  <br/>
 
-<br/>
-
-<details open>
-  <summary><b>Toprope</b></summary>
+  <b>Toprope</b>
   <img src="./heatmaps/toprope.jpg">
-</details>
+  <br/>
 
-<br/>
-
-<details open>
-  <summary><b>Aid</b></summary>
+  <b>Aid</b>
   <img src="./heatmaps/aid.jpg">
-</details>
+  <br/>
 
-<br/>
-
-<details open>
-  <summary><b>Alpine</b></summary>
+  <b>Alpine</b>
   <img src="./heatmaps/alpine.jpg">
-</details>
+  <br/>
 
-<br/>
-
-<details open>
-  <summary><b>Snow</b></summary>
+  <b>Snow</b>
   <img src="./heatmaps/snow.jpg">
-</details>
+  <br/>
 
-<br/>
-
-<details open>
-  <summary><b>Ice</b></summary>
+  <b>Ice</b>
   <img src="./heatmaps/ice.jpg">
-</details>
+  <br/>
 
-<br/>
-
-<details open>
-  <summary><b>Mixed</b></summary>
+  <b>Mixed</b>
   <img src="./heatmaps/mixed.jpg">
-</details>
+  <br/>
 
-<br/>
+</details>
 
 ## ⚗️ How are these heatmaps created?
 
