@@ -7,11 +7,12 @@
 <details open>
   <summary><b>All climbing types</b></summary>
   <img src="./heatmaps/all.jpg">
-  <br/>
 </details>
 
+<br/>
+
 <details>
-  <summary>Individual climbing types</summary>
+  <summary><b>Individual climbing types</b></summary>
 
   <b>Sport</b>
   <img src="./heatmaps/sport.jpg">
