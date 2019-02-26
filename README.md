@@ -6,6 +6,7 @@
 
 <details open>
   <summary><b>All climbing types</b></summary>
+  <br/>
   <img src="./heatmaps/all.jpg">
 </details>
 
@@ -13,6 +14,7 @@
 
 <details>
   <summary><b>Individual climbing types</b></summary>
+  <br/>
 
   <b>Sport</b>
   <img src="./heatmaps/sport.jpg">
@@ -48,9 +50,9 @@
 
   <b>Mixed</b>
   <img src="./heatmaps/mixed.jpg">
-  <br/>
-
 </details>
+
+<br/>
 
 ## ⚗️ How are these heatmaps created?
 
