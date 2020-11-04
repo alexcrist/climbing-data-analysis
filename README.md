@@ -2,10 +2,6 @@
 
 > An analysis of outdoor rock climbing data
 
-## 📖 Article
-
-https://medium.com/@alexecrist/where-is-the-mountain-william-shatner-27fbe9c22eb7?sk=cf258f52627f8cd61da0ab2d14c659cd
-
 ## 🌄 Where are the best places to live for rock climbing?
 
 <details open>
